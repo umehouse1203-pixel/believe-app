@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1024px;
+      height: 1024px;
+      overflow: hidden;
+    }
+
+    #app-icon {
+      width: 1024px;
+      height: 1024px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* ボタンと完全に同一のグラデーション */
+      background: radial-gradient(circle at center, rgba(108, 98, 86, 0.95) 0%, rgba(58, 52, 44, 1) 100%);
+    }
+
+    /* ── 後ろから差し込む強い光 ── */
+    .backlight {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 240, 200, 0.28) 0%,
+        rgba(220, 190, 140, 0.14) 30%,
+        rgba(180, 150, 90, 0.06) 60%,
+        transparent 80%
+      );
+      filter: blur(15px);
+      z-index: 1;
+    }
+
+    /* 「b」の文字：ボタンのテキストと同じ白抜き */
+    .letter-b {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 680px;
+      font-weight: 300;
+      font-style: normal;
+      color: #f0ede8;
+      z-index: 10;
+      line-height: 1;
+      transform: translate(0px, 40px);
+    }
+  </style>
+</head>
+<body>
+  <div id="app-icon">
+    <div class="backlight"></div>
+    <div class="letter-b">b</div>
+  </div>
+</body>
+</html>
