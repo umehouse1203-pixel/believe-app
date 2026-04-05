@@ -8,7 +8,7 @@ const translations = {
     back: '戻る',
     totalTime: 'これまでの総時間',
     startingNow: 'いま、ここから',
-    hours: '時間',
+    hours: '時',
     minutes: '分',
     seconds: '秒',
     thinkingNow: '想っている時間...',
