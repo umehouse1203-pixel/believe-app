@@ -424,10 +424,17 @@ const translations = {
 type LanguageDict = typeof translations.ja;
 
 export function useI18n(): LanguageDict {
-  const code = navigator.language.split('-')[0];
+  const fullCode = navigator.language;
+  const shortCode = fullCode.split('-')[0];
   
-  if (code in translations) {
-    return translations[code as keyof typeof translations];
+  // Try exact match first (e.g. es-419)
+  if (fullCode in translations) {
+    return (translations as any)[fullCode];
+  }
+  
+  // Try short code (e.g. es)
+  if (shortCode in translations) {
+    return (translations as any)[shortCode];
   }
   
   return translations.en;
