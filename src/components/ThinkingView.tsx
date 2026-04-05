@@ -66,10 +66,10 @@ export default function ThinkingView({ target, onEnd }: Props) {
            <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0.5, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }}>{t.thinkingNow}</p>
            <div className="unified-time-text">
              {seconds >= 3600 && (
-               <><span className="time-number">{Math.floor(seconds / 3600)}</span>時</>
+               <><span className="time-number">{Math.floor(seconds / 3600)}</span>{t.hours}</>
              )}
-             <span className="time-number">{Math.floor((seconds % 3600) / 60)}</span>分
-             <span className="time-number">{String(seconds % 60).padStart(2, '0')}</span>秒
+             <span className="time-number">{Math.floor((seconds % 3600) / 60)}</span>{t.minutes}
+             <span className="time-number">{String(seconds % 60).padStart(2, '0')}</span>{t.seconds}
            </div>
          </div>
       </div>

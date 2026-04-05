@@ -21,9 +21,9 @@ export default function HomeView({ target, sessions, onStart, onEditTarget }: Pr
     
     return (
       <div className="unified-time-text">
-        {h > 0 && <><span className="time-number">{h}</span>時間</>}
-        {m > 0 && <><span className="time-number">{m}</span>分</>}
-        {h === 0 && m === 0 && <><span className="time-number">{s}</span>秒</>}
+        {h > 0 && <><span className="time-number">{h}</span>{t.hours}</>}
+        {m > 0 && <><span className="time-number">{m}</span>{t.minutes}</>}
+        {h === 0 && m === 0 && <><span className="time-number">{s}</span>{t.seconds}</>}
       </div>
     );
   };

@@ -98,8 +98,8 @@ export default function EndView({ duration, stats, onAcknowledge }: Props) {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(2px, 1dvh, 8px)' }}>
           <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0.5, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }}>{t.timeSpent}</p>
           <div className="unified-time-text">
-            {mins > 0 && <><span className="time-number">{mins}</span>分</>}
-            <span className="time-number">{secs}</span>秒
+            {mins > 0 && <><span className="time-number">{mins}</span>{t.minutes}</>}
+            <span className="time-number">{secs}</span>{t.seconds}
           </div>
         </div>
       </div>
