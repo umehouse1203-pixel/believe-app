@@ -129,6 +129,7 @@ button { background: none; border: none; font-family: inherit; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .unified-action-button:hover { 
