@@ -146,6 +146,26 @@ button { background: none; border: none; font-family: inherit; }
 
 
 
+@keyframes breathing-glow {
+  0% { 
+    box-shadow: 0 0 10px rgba(194, 160, 93, 0.1); 
+    border-color: rgba(194, 160, 93, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 45px rgba(194, 160, 93, 0.5); 
+    border-color: rgba(194, 160, 93, 0.4);
+  }
+  100% { 
+    box-shadow: 0 0 10px rgba(194, 160, 93, 0.1); 
+    border-color: rgba(194, 160, 93, 0.2);
+  }
+}
+
+.avatar-breathing-glow {
+  animation: breathing-glow 4s ease-in-out infinite;
+  transition: border-color 1s ease;
+}
+
 /* ==================
    Specific Component Styling
    ================== */

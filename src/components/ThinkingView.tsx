@@ -47,7 +47,7 @@ export default function ThinkingView({ target, onEnd }: Props) {
   return (
     <div className="app-container">
       <div className="center-avatar" style={{ flexDirection: 'column', alignItems: 'center', gap: 'clamp(10px, 3dvh, 25px)' }}>
-        <div className="target-avatar-container thinking-pulse">
+        <div className="target-avatar-container thinking-pulse avatar-breathing-glow">
           <div className="target-avatar">
             {target.photoUrl ? (
               <img src={target.photoUrl} alt={target.name} />
