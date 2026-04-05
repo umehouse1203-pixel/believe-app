@@ -19,9 +19,13 @@ export default function HomeView({ target, sessions, onStart, onEditTarget }: Pr
     const m = Math.floor(totalSec / 60) % 60;
     const h = Math.floor(totalSec / 3600);
     
-    if (h > 0) return `${h}${t.hours} ${m}${t.minutes} ${s}${t.seconds}`;
-    if (m > 0) return `${m}${t.minutes} ${s}${t.seconds}`;
-    return `${s}${t.seconds}`;
+    return (
+      <div className="unified-time-text">
+        {h > 0 && <><span className="time-number">{h}</span>時間</>}
+        {m > 0 && <><span className="time-number">{m}</span>分</>}
+        {h === 0 && m === 0 && <><span className="time-number">{s}</span>秒</>}
+      </div>
+    );
   };
 
   return (
@@ -49,12 +53,12 @@ export default function HomeView({ target, sessions, onStart, onEditTarget }: Pr
         {totalSeconds > 0 ? (
            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(2px, 1dvh, 8px)' }}>
              <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0.5, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }}>{t.totalTime}</p>
-             <p className="unified-time-text">{formatTime(totalSeconds)}</p>
+             {formatTime(totalSeconds)}
            </div>
         ) : (
            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(2px, 1dvh, 8px)' }}>
              <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }} aria-hidden="true">Spacer</p>
-             <p className="unified-time-text">{t.startingNow}</p>
+             <div className="unified-time-text">{t.startingNow}</div>
            </div>
         )}
       </div>

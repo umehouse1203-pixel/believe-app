@@ -64,13 +64,18 @@ export default function ThinkingView({ target, onEnd }: Props) {
       <div className="fixed-time-container">
          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(2px, 1dvh, 8px)' }}>
            <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0.5, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }}>{t.thinkingNow}</p>
-           <p className="unified-time-text">{Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, '0')}</p>
+           <div className="unified-time-text">
+             {seconds >= 3600 && (
+               <><span className="time-number">{Math.floor(seconds / 3600)}</span>時</>
+             )}
+             <span className="time-number">{Math.floor((seconds % 3600) / 60)}</span>分
+             <span className="time-number">{String(seconds % 60).padStart(2, '0')}</span>秒
+           </div>
          </div>
       </div>
 
       <div className="fixed-action-container">
          <button className="unified-action-button" onClick={() => {
-           // Calculate duration as accurately as possible at click time
            const finalDuration = Math.max(1, Math.floor(activeTimeRef.current / 1000));
            onEnd(finalDuration);
          }}>

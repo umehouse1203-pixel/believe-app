@@ -12,6 +12,7 @@ export default function EndView({ duration, stats, onAcknowledge }: Props) {
   const t = useI18n();
   
   // Determine Country Name for display
+  // Determine Country Name for display
   const countryName = useMemo(() => {
     try {
       const regionCode = navigator.language.split('-')[1] || 'JP';
@@ -22,29 +23,61 @@ export default function EndView({ duration, stats, onAcknowledge }: Props) {
     }
   }, []);
 
-  // Combine basic messages and statistical messages with guards
-  const msg = useMemo(() => {
-    // Start with the basic 10 quiet messages
-    const pool: string[] = [...t.messages];
+  // Helper function to wrap numbers in spans
+  const formatMsg = (template: string, placeholders: Record<string, any>) => {
+    let parts: (string | JSX.Element)[] = [template];
     
+    Object.entries(placeholders).forEach(([key, value]) => {
+      const newParts: (string | JSX.Element)[] = [];
+      const tag = `{${key}}`;
+      
+      parts.forEach(part => {
+        if (typeof part !== 'string') {
+          newParts.push(part);
+          return;
+        }
+        
+        const segments = part.split(tag);
+        segments.forEach((segment, i) => {
+          newParts.push(segment);
+          if (i < segments.length - 1) {
+            if (key === 'hours' || key === 'count') {
+              newParts.push(<span key={`${key}-${i}`} className="time-number">{value}</span>);
+            } else {
+              newParts.push(String(value));
+            }
+          }
+        });
+      });
+      parts = newParts;
+    });
+    
+    return parts;
+  };
+
+  const msgNode = useMemo(() => {
+    const basicPool = [...t.messages].map(m => [m]);
+    const statsPool: (string | JSX.Element)[][] = [];
+
     if (stats) {
-      // Only include statistical messages if values are non-zero
       if (stats.globalHours > 0) {
-        pool.push(t.stats.globalTotalTime.replace('{hours}', String(stats.globalHours)));
+        statsPool.push(formatMsg(t.stats.globalTotalTime, { hours: stats.globalHours }));
       }
       if (stats.localHours > 0) {
-        pool.push(t.stats.localTotalTime.replace('{country}', countryName).replace('{hours}', String(stats.localHours)));
+        statsPool.push(formatMsg(t.stats.localTotalTime, { country: countryName, hours: stats.localHours }));
       }
       if (stats.globalPeople > 0) {
-        pool.push(t.stats.globalPeopleCount.replace('{count}', String(stats.globalPeople)));
+        statsPool.push(formatMsg(t.stats.globalPeopleCount, { count: stats.globalPeople }));
       }
       if (stats.localPeople > 0) {
-        pool.push(t.stats.localPeopleCount.replace('{country}', countryName).replace('{count}', String(stats.localPeople)));
+        statsPool.push(formatMsg(t.stats.localPeopleCount, { country: countryName, count: stats.localPeople }));
       }
     }
     
-    return pool[Math.floor(Math.random() * pool.length)];
+    const totalPool = [...basicPool, ...statsPool];
+    return totalPool[Math.floor(Math.random() * totalPool.length)];
   }, [t, stats, countryName]);
+  
   
   const mins = Math.floor(duration / 60);
   const secs = duration % 60;
@@ -57,14 +90,17 @@ export default function EndView({ duration, stats, onAcknowledge }: Props) {
       
       <div className="end-message-container">
         <h2 className="end-message-text">
-          {msg}
+          {msgNode}
         </h2>
       </div>
       
       <div className="fixed-time-container">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(2px, 1dvh, 8px)' }}>
           <p style={{ fontSize: 'clamp(0.65rem, 2vmin, 0.85rem)', opacity: 0.5, letterSpacing: '0.2em', fontWeight: 300, margin: 0 }}>{t.timeSpent}</p>
-          <p className="unified-time-text">{mins > 0 ? `${mins}${t.minutes} ` : ''}{secs}{t.seconds}</p>
+          <div className="unified-time-text">
+            {mins > 0 && <><span className="time-number">{mins}</span>分</>}
+            <span className="time-number">{secs}</span>秒
+          </div>
         </div>
       </div>
       
