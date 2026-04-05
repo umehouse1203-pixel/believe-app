@@ -138,10 +138,7 @@ button { background: none; border: none; font-family: inherit; }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.unified-action-button:active {
-  transform: scale(0.97);
-  transition: all 0.1s ease;
-}
+
 
 .unified-action-button:disabled { opacity: 0.2; pointer-events: none; }
 
