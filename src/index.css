@@ -148,15 +148,15 @@ button { background: none; border: none; font-family: inherit; }
 
 @keyframes breathing-glow {
   0% { 
-    box-shadow: 0 0 10px rgba(194, 160, 93, 0.1); 
+    box-shadow: 0 0 15px rgba(194, 160, 93, 0.1), 0 0 5px rgba(255, 255, 255, 0.05); 
     border-color: rgba(194, 160, 93, 0.2);
   }
   50% { 
-    box-shadow: 0 0 45px rgba(194, 160, 93, 0.5); 
-    border-color: rgba(194, 160, 93, 0.4);
+    box-shadow: 0 0 90px rgba(194, 160, 93, 0.6), 0 0 20px rgba(255, 220, 150, 0.3); 
+    border-color: rgba(194, 160, 93, 0.5);
   }
   100% { 
-    box-shadow: 0 0 10px rgba(194, 160, 93, 0.1); 
+    box-shadow: 0 0 15px rgba(194, 160, 93, 0.1), 0 0 5px rgba(255, 255, 255, 0.05); 
     border-color: rgba(194, 160, 93, 0.2);
   }
 }
