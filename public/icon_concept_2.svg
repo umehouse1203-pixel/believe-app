@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <!-- 背景用のグラデーション：外側の完全な暗闇から、中心に向かって少しずつ明るくなる -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#362d26" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#14110e" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- 光の層（ハロー）用の多層グラデーション -->
+    <radialGradient id="haloLayers" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ffedd9" stop-opacity="0.6"/>
+      <stop offset="75%" stop-color="#d6af85" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="blur6" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+  </defs>
+
+  <!-- 中心に向かって明るくなる背景 -->
+  <rect width="240" height="240" rx="55" fill="url(#bgGlow)"/>
+  
+  <!-- [層1] 最も外側に広がる光の層 -->
+  <circle cx="120" cy="120" r="95" fill="url(#haloLayers)" opacity="0.8" style="mix-blend-mode: screen;" />
+
+  <!-- [層2] 中間層の温かい光（層を追加） -->
+  <circle cx="120" cy="120" r="50" fill="#ffedd9" filter="url(#blur6)" opacity="0.6" style="mix-blend-mode: screen;"/>
+  
+  <!-- [層3] 中心近くの強い発光層 -->
+  <circle cx="120" cy="120" r="24" fill="#ffffff" filter="url(#blur6)" opacity="0.85" style="mix-blend-mode: screen;"/>
+  
+  <!-- [コア] より一回り大きくなった中心となる光の点 -->
+  <circle cx="120" cy="120" r="12" fill="#ffffff"/>
+  
+</svg>

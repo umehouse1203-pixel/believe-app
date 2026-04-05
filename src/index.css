@@ -1,0 +1,237 @@
+:root {
+  /* Minimal Dark Theme Focus */
+  --bg-color: #050505;
+  --text-color: #f0f0f0;
+  --glow-color: rgba(255, 255, 255, 0.15);
+  --btn-bg: rgba(255, 255, 255, 0.05);
+  --btn-border: rgba(255, 255, 255, 0.1);
+  --btn-hover: rgba(255, 255, 255, 0.1);
+  --btn-text: #ffffff;
+  --input-placeholder: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme {
+  --bg-color: #f8f9fa;
+  --text-color: #222222;
+  --glow-color: rgba(0, 0, 0, 0.05);
+  --btn-bg: rgba(0, 0, 0, 0.03);
+  --btn-border: rgba(0, 0, 0, 0.15);
+  --btn-hover: rgba(0, 0, 0, 0.08);
+  --btn-text: #222222;
+  --input-placeholder: rgba(0, 0, 0, 0.3);
+}
+
+.global-bg-wrapper {
+  width: 100%; min-height: 100dvh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  min-height: 100dvh; /* use dynamic viewport to adapt to OS keyboards natively */
+  transition: background-color 1.5s ease, color 1.5s ease;
+  overflow-x: hidden;
+  overflow-y: auto; /* allows the OS to seamlessly reset the pan when keyboard collapses */
+}
+
+#root { width: 100%; height: 100vh; }
+button { background: none; border: none; font-family: inherit; }
+
+/* ==================
+   Unified Grid Layout (overlap prevention)
+   ================== */
+.app-container {
+  width: 100%; height: 100dvh;
+  display: grid;
+  grid-template-rows: 15% 45% 15% 25%; /* Expand bottom safely */
+  align-items: center; justify-items: center;
+}
+
+.logo-container {
+  grid-row: 1; 
+  align-self: start; 
+  width: 100%; 
+  text-align: center;
+  position: relative;
+  z-index: 9999;
+  padding-top: clamp(15px, 4dvh, 30px);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vmin, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.6em;
+  margin-right: -0.6em;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.center-avatar {
+  grid-row: 2; align-self: center; width: 100%; display: flex; justify-content: center;
+}
+
+.fixed-time-container {
+  grid-row: 3; align-self: end; width: 100%; text-align: center;
+}
+
+.unified-time-text {
+  font-size: clamp(1.5rem, 8vmin, 3.5rem); 
+  letter-spacing: 0.15em; 
+  opacity: 0.85; 
+  font-variant-numeric: tabular-nums; 
+  font-weight: 200;
+  margin: 0;
+  line-height: 1;
+}
+
+.fixed-action-container {
+  grid-row: 4; 
+  align-self: start; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.unified-action-button {
+  margin-top: clamp(15px, 4dvh, 40px);
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 50px;
+  font-size: clamp(1rem, 3vmin, 1.25rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  line-height: 1;
+
+  width: clamp(200px, 60vw, 280px); /* Strictly lock uniform dimensions */
+
+  opacity: 0.85;
+  cursor: pointer;
+  padding: clamp(14px, 2dvh, 18px) 0; /* Let width handle horizontal space naturally */
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.unified-action-button:hover { 
+  opacity: 1; 
+  background: var(--btn-hover); 
+}
+.unified-action-button:disabled { opacity: 0.2; pointer-events: none; }
+
+
+/* ==================
+   Specific Component Styling
+   ================== */
+.setup-form {
+  grid-row: 2 / span 2; /* Safely absorb the unused 3rd row spacing */
+  width: 100%;
+  align-self: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.avatar-upload {
+  width: clamp(100px, 35vmin, 180px); 
+  height: clamp(100px, 35vmin, 180px); 
+  border-radius: 50%;
+  border: 1px dashed var(--btn-border);
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer; overflow: hidden;
+  transition: opacity 0.3s ease;
+  margin-bottom: clamp(10px, 3dvh, 25px);
+}
+.avatar-upload:hover { opacity: 0.8; }
+.avatar-preview { width: 100%; height: 100%; object-fit: cover; }
+.avatar-placeholder { color: var(--btn-border); font-size: 0.9rem; letter-spacing: 0.1em; }
+
+.minimal-input {
+  width: 100%; background: transparent; border: none;
+  border-bottom: 1px solid var(--btn-border);
+  color: var(--text-color); padding: 15px; text-align: center;
+  font-size: 1.1rem; outline: none; font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1em;
+}
+.minimal-input::placeholder { color: var(--input-placeholder); }
+
+.reset-time-toggle {
+  margin-top: clamp(15px, 2dvh, 25px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.reset-time-toggle:hover { opacity: 1; }
+.reset-time-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.avatar-text {
+  width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;
+  font-size: clamp(2rem, 8vmin, 4rem); background: var(--btn-bg); font-weight: 300;
+}
+.target-avatar-container {
+  width: clamp(100px, 35vmin, 180px); 
+  height: clamp(100px, 35vmin, 180px); 
+  border-radius: 50%; overflow: hidden;
+  position: relative;
+}
+.editable-avatar {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.editable-avatar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+.target-avatar { width: 100%; height: 100%; }
+.target-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.thinking-pulse::before {
+  content: ''; position: absolute;
+  top: -30%; left: -30%; right: -30%; bottom: -30%;
+  background-color: var(--glow-color);
+  filter: blur(35px); z-index: -1;
+  animation: thinkingBreathe 6s infinite ease-in-out alternate;
+}
+@keyframes thinkingBreathe {
+  0% { transform: scale(0.85); opacity: 0.3; }
+  100% { transform: scale(1.15); opacity: 0.8; }
+}
+
+.end-message-container {
+  grid-row: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.end-message-text {
+  font-weight: 300;
+  font-size: clamp(1rem, 4vmin, 1.45rem);
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 600px;
+  width: 100%;
+  /* Wrapping Logic */
+  white-space: pre-wrap;
+  word-break: break-all; /* Ensures wrapping for CJK languages without spaces */
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,130 @@
+import { useState, useEffect } from 'react';
+import SetupView from './components/SetupView';
+import HomeView from './components/HomeView';
+import ThinkingView from './components/ThinkingView';
+import EndView from './components/EndView';
+import { Analytics } from './services/analytics';
+import { Target, Session, EndStats } from './types';
+type ViewState = 'setup' | 'home' | 'thinking' | 'end';
+
+function App() {
+  const [view, setView] = useState<ViewState>('setup');
+  const [target, setTarget] = useState<Target | null>(null);
+  const [sessions, setSessions] = useState<Session[]>([]);
+  const [currentDuration, setCurrentDuration] = useState(0);
+  const [isLight, setIsLight] = useState(false);
+  const [stats, setStats] = useState<EndStats | null>(null);
+  
+  // Minimal Theme logic
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'dark'); 
+    const saved = localStorage.getItem('believe_theme');
+    if (saved === 'light') {
+      setIsLight(true);
+      document.body.classList.add('light-theme');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isLight) {
+      document.body.classList.remove('light-theme');
+      localStorage.setItem('believe_theme', 'dark');
+      setIsLight(false);
+    } else {
+      document.body.classList.add('light-theme');
+      localStorage.setItem('believe_theme', 'light');
+      setIsLight(true);
+    }
+  };
+
+  const handleBackgroundClick = (e: React.MouseEvent) => {
+    const el = e.target as HTMLElement;
+    if (
+      el.closest('button') || 
+      el.closest('input') || 
+      el.closest('label') ||
+      el.closest('.target-avatar-container') || 
+      el.closest('.avatar-upload') ||
+      el.closest('.reset-time-toggle')
+    ) {
+      return; // Do not toggle when interacting with core elements
+    }
+    toggleTheme();
+  };
+
+  useEffect(() => {
+    // Load from local storage
+    const savedTarget = localStorage.getItem('believe_target');
+    const savedSessions = localStorage.getItem('believe_sessions');
+    if (savedTarget) {
+      setTarget(JSON.parse(savedTarget));
+      setView('home');
+    }
+    if (savedSessions) {
+      setSessions(JSON.parse(savedSessions));
+    }
+  }, []);
+
+  const handleSaveTarget = (newTarget: Target, resetTime: boolean) => {
+    localStorage.setItem('believe_target', JSON.stringify(newTarget));
+    setTarget(newTarget);
+    
+    if (resetTime) {
+      setSessions([]);
+      localStorage.removeItem('believe_sessions');
+    }
+    
+    setView('home');
+  };
+
+  const handleEditTarget = () => {
+    setView('setup');
+  };
+
+  const handleStartThinking = () => {
+    setCurrentDuration(0);
+    setView('thinking');
+  };
+
+  const handleEndThinking = async (duration: number) => {
+    setCurrentDuration(duration);
+    
+    // Save session
+    if (target && duration > 0) {
+      const newSession: Session = {
+        id: Date.now().toString(),
+        targetName: target.name,
+        durationSeconds: duration,
+        date: new Date().toISOString()
+      };
+      const newSessions = [...sessions, newSession];
+      setSessions(newSessions);
+      localStorage.setItem('believe_sessions', JSON.stringify(newSessions));
+      
+      // Transmit telemetry and wait for it to ensure DB has the latest entry
+      await Analytics.trackSession(target.name, duration);
+      
+      // Fetch latest global/local stats for the end view
+      const freshStats = await Analytics.fetchStats(target.name);
+      setStats(freshStats);
+    }
+
+    setView('end');
+  };
+
+  const handleAcknowledgeEnd = () => {
+    setStats(null);
+    setView('home');
+  };
+
+  return (
+    <div className="global-bg-wrapper" onClick={handleBackgroundClick}>
+      {view === 'setup' && <SetupView initialTarget={target || undefined} onSave={handleSaveTarget} />}
+      {view === 'home' && target && <HomeView target={target} sessions={sessions} onStart={handleStartThinking} onEditTarget={handleEditTarget} />}
+      {view === 'thinking' && target && <ThinkingView target={target} onEnd={handleEndThinking} />}
+      {view === 'end' && <EndView duration={currentDuration} stats={stats} onAcknowledge={handleAcknowledgeEnd} />}
+    </div>
+  );
+}
+
+export default App;
