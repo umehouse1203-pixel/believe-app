@@ -66,12 +66,18 @@ function App() {
   }, []);
 
   const handleSaveTarget = (newTarget: Target, resetTime: boolean) => {
-    localStorage.setItem('believe_target', JSON.stringify(newTarget));
+    try {
+      localStorage.setItem('believe_target', JSON.stringify(newTarget));
+    } catch (e) {
+      console.warn("Saving target failed (likely storage full):", e);
+    }
     setTarget(newTarget);
     
     if (resetTime) {
       setSessions([]);
-      localStorage.removeItem('believe_sessions');
+      try {
+        localStorage.removeItem('believe_sessions');
+      } catch (e) {}
     }
     
     setView('home');

@@ -76,13 +76,13 @@ export default function SetupView({ initialTarget, onSave }: Props) {
             <span className="reset-time-text">{t.resetTimeOption}</span>
           </label>
         )}
+        
+        <div className="fixed-action-container">
+          <button type="submit" className="unified-action-button" disabled={!name.trim()}>
+            {initialTarget ? t.updateSetup : t.startSetup}
+          </button>
+        </div>
       </form>
-
-      <div className="fixed-action-container">
-        <button type="submit" form="setup-form" className="unified-action-button" disabled={!name.trim()}>
-          {initialTarget ? t.updateSetup : t.startSetup}
-        </button>
-      </div>
     </div>
   );
 }
