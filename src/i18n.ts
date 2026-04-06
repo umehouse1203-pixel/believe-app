@@ -15,6 +15,8 @@ const translations = {
     timeSpent: '今回の想った時間',
     updateSetup: '更新する',
     resetTimeOption: 'これまでの想った時間をリセットする',
+    howToUse: '使い方',
+    close: '閉じる',
     messages: [
       "ちゃんと届いています", 
       "優しい想いに包まれて", 
@@ -50,6 +52,8 @@ const translations = {
     timeSpent: 'Time spent',
     updateSetup: 'Update',
     resetTimeOption: 'Reset accumulated time',
+    howToUse: 'How to use',
+    close: 'Close',
     messages: [
       "Your thoughts are felt.", 
       "Wrapped in gentle thoughts.", 
@@ -85,6 +89,8 @@ const translations = {
     timeSpent: 'Tiempo dedicado',
     updateSetup: 'Actualizar',
     resetTimeOption: 'Restablecer tiempo acumulado',
+    howToUse: 'Cómo usar',
+    close: 'Cerrar',
     messages: [
       "Tus pensamientos han llegado.", 
       "Envuelto en pensamientos gentiles.", 
@@ -120,6 +126,8 @@ const translations = {
     timeSpent: 'Temps passé',
     updateSetup: 'Mettre à jour',
     resetTimeOption: 'Réinitialiser le temps cumulé',
+    howToUse: 'Comment utiliser',
+    close: 'Fermer',
     messages: [
       "Vos pensées sont ressenties.", 
       "Enveloppé de douces pensées.", 
@@ -155,6 +163,8 @@ const translations = {
     timeSpent: 'Verbrachte Zeit',
     updateSetup: 'Aktualisieren',
     resetTimeOption: 'Akkumulierte Zeit zurücksetzen',
+    howToUse: 'Wie benutzt man',
+    close: 'Schließen',
     messages: [
       "Deine Gedanken kommen an.", 
       "In sanfte Gedanken gehüllt.", 
@@ -190,6 +200,8 @@ const translations = {
     timeSpent: '本次思念时长',
     updateSetup: '更新',
     resetTimeOption: '重置累计时间',
+    howToUse: '如何使用',
+    close: '关闭',
     messages: [
       "您的思念已传达。", 
       "被温柔的思绪包围。", 
@@ -225,6 +237,8 @@ const translations = {
     timeSpent: '이번에 생각한 시간',
     updateSetup: '업데이트',
     resetTimeOption: '누적 시간 초기화',
+    howToUse: '사용 방법',
+    close: '닫기',
     messages: [
       "마음이 잘 전해졌습니다.", 
       "다정한 생각에 감싸여.", 
@@ -260,6 +274,8 @@ const translations = {
     timeSpent: 'Tempo trascorso',
     updateSetup: 'Aggiorna',
     resetTimeOption: 'Reimposta tempo accumulato',
+    howToUse: 'Come usare',
+    close: 'Chiudi',
     messages: [
       "I tuoi pensieri sono sentiti.", 
       "Avvolto in pensieri gentili.", 
@@ -295,6 +311,8 @@ const translations = {
     timeSpent: 'Tempo dedicato',
     updateSetup: 'Actualizar',
     resetTimeOption: 'Redefinir tempo acumulado',
+    howToUse: 'Como usar',
+    close: 'Fechar',
     messages: [
       "Seus pensamentos chegaram.", 
       "Envolto em pensamentos gentis.", 
@@ -330,6 +348,8 @@ const translations = {
     timeSpent: 'Затраченное время',
     updateSetup: 'Обновить',
     resetTimeOption: 'Сбросить накопленное время',
+    howToUse: 'Как пользоваться',
+    close: 'Закрыть',
     messages: [
       "Ваши мысли услышаны.", 
       "Окутан мягкими мыслями.", 
@@ -365,6 +385,8 @@ const translations = {
     timeSpent: 'बिताया गया समय',
     updateSetup: 'अपडेट करें',
     resetTimeOption: 'कुल समय रीセット करें',
+    howToUse: 'कैसे उपयोग करें',
+    close: 'बंद करें',
     messages: [
       "आपकी भावनाएँ पहुँच गई हैं।", 
       "सौम्य विचारों में लिपटा हुआ।", 
@@ -400,6 +422,8 @@ const translations = {
     timeSpent: 'الوقت المنقضي',
     updateSetup: 'تحديث',
     resetTimeOption: 'إعادة ضبط الوقت المتراكم',
+    howToUse: 'كيف تستخدم',
+    close: 'إغلاق',
     messages: [
       "أفكارك قد وصلت.", 
       "مغلف بأفكار لطيفة.", 
