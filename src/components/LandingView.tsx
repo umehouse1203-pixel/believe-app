@@ -58,8 +58,8 @@ export default function LandingView({ onStart }: Props) {
         {/* Footer */}
         <footer className="landing-footer">
           <div className="footer-links">
-            <a href="#" onClick={(e) => { e.preventDefault(); setLegalType('privacy'); }}>{t.privacyPolicy}</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setLegalType('terms'); }}>{t.termsOfUse}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setLegalType('privacy'); }}>{t.privacyPolicy}</a>
             <a href="mailto:umedinosaur@gmail.com">{t.contactUs}</a>
           </div>
         </footer>
