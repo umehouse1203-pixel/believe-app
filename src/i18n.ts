@@ -45,7 +45,10 @@ const translations = {
       localTotalTime: "この想いは、{country}のどこかで静かに重なっています。\n合計：{hours}時間",
       globalPeopleCount: "この想いは、世界のどこかで静かに広がっています。\n{count}人が想っています",
       localPeopleCount: "この想いは、{country}のどこかで静かに広がっています。\n{count}人が想っています"
-    }
+    },
+    privacyPolicy: 'プライバシーポリシー',
+    termsOfUse: '利用規約',
+    contactUs: 'お問い合わせ'
   },
   en: {
     tutorialTitle: "Record your \"Thoughts\"",
@@ -93,7 +96,10 @@ const translations = {
       localTotalTime: "These thoughts are quietly layering somewhere in {country}.\nTotal: {hours}h",
       globalPeopleCount: "These thoughts are quietly spreading across the world.\n{count} people are thinking of this.",
       localPeopleCount: "These thoughts are quietly spreading across {country}.\n{count} people are thinking of this."
-    }
+    },
+    privacyPolicy: 'Privacy Policy',
+    termsOfUse: 'Terms of Use',
+    contactUs: 'Contact Us'
   },
   es: {
     tutorialTitle: "Registra tus \"Pensamientos\"",
@@ -141,7 +147,10 @@ const translations = {
       localTotalTime: "Estos pensamientos se están uniendo silenciosamente en algún lugar de {country}.\nTotal: {hours}h",
       globalPeopleCount: "Estos pensamientos se extienden silenciosamente por el mundo.\n{count} personas están pensando en esto.",
       localPeopleCount: "Estos pensamientos se extienden silenciosamente por {country}.\n{count} personas están pensando en esto."
-    }
+    },
+    privacyPolicy: 'Política de Privacidad',
+    termsOfUse: 'Términos de Uso',
+    contactUs: 'Contacto'
   },
   fr: {
     tutorialTitle: "Enregistrez vos \"Pensées\"",
@@ -189,7 +198,10 @@ const translations = {
       localTotalTime: "Ces pensées se superposent silencieusement quelque part en {country}.\nTotal : {hours}h",
       globalPeopleCount: "Ces pensées se répandent silencieusement à travers le monde.\n{count} personnes y pensent.",
       localPeopleCount: "Ces pensées se répandent silencieusement en {country}.\n{count} personnes y pensent."
-    }
+    },
+    privacyPolicy: 'Politique de confidentialité',
+    termsOfUse: "Conditions d'utilisation",
+    contactUs: 'Nous contacter'
   },
   de: {
     tutorialTitle: "Zeichne deine \"Gedanken\" auf",
@@ -237,7 +249,10 @@ const translations = {
       localTotalTime: "Diese Gedanken überlagern sich leise irgendwo in {country}.\nGesamt: {hours}h",
       globalPeopleCount: "Diese Gedanken breiten sich leise über die Welt aus.\n{count} Menschen denken daran.",
       localPeopleCount: "Diese Gedanken breiten sich leise in {country} aus.\n{count} Menschen denken daran."
-    }
+    },
+    privacyPolicy: 'Datenschutz',
+    termsOfUse: 'Nutzungsbedingungen',
+    contactUs: 'Kontakt'
   },
   zh: {
     tutorialTitle: "记录你的“思念”",
@@ -285,7 +300,10 @@ const translations = {
       localTotalTime: "这些思念正悄然重叠在{country}の某个角落。\n总计：{hours}小时",
       globalPeopleCount: "这些思念正悄然传播到世界各地。\n共有 {count} 人在思念。",
       localPeopleCount: "这些思念正悄然在{country}传播。\n共有 {count} 人在思念。"
-    }
+    },
+    privacyPolicy: '隐私政策',
+    termsOfUse: '使用条款',
+    contactUs: '联系我们'
   },
   ko: {
     tutorialTitle: "당신의 '마음'을 기록하다",
@@ -333,7 +351,10 @@ const translations = {
       localTotalTime: "이 마음은 {country}의 어딘가에서 조용히 겹쳐지고 있습니다.\n합계: {hours}시간",
       globalPeopleCount: "이 마음은 세계 어딘가에서 조용히 퍼지고 있습니다.\n{count}명이 생각하고 있습니다.",
       localPeopleCount: "이 마음은 {country}의 어딘가에서 조용히 퍼지고 있습니다.\n{count}명이 생각하고 있습니다."
-    }
+    },
+    privacyPolicy: '개인정보처리방침',
+    termsOfUse: '이용약관',
+    contactUs: '문의하기'
   },
   it: {
     tutorialTitle: "Registra i tuoi \"Pensieri\"",
@@ -381,7 +402,10 @@ const translations = {
       localTotalTime: "Questi pensieri si stanno stratificando silenziosamente da qualche parte in {country}.\nTotale: {hours}h",
       globalPeopleCount: "Questi pensieri si stanno diffondendo silenziosamente nel mondo.\n{count} persone ci stanno pensando.",
       localPeopleCount: "Questi pensieri si stanno diffondendo silenziosamente in {country}.\n{count} persone ci stanno pensando."
-    }
+    },
+    privacyPolicy: 'Informativa sulla privacy',
+    termsOfUse: 'Termini di utilizzo',
+    contactUs: 'Contattaci'
   },
   pt: {
     tutorialTitle: "Grave seus \"Pensamentos\"",
@@ -429,7 +453,10 @@ const translations = {
       localTotalTime: "Estes pensamentos estão se sobrepondo silenciosamente em algum lugar em {country}.\nTotal: {hours}h",
       globalPeopleCount: "Estes pensamentos estão se espalhando silenciosamente pelo mundo.\n{count} pessoas estão pensando nisso.",
       localPeopleCount: "Estes pensamentos estão se espalhando silenciosamente em {country}.\n{count} pessoas estão pensando nisso."
-    }
+    },
+    privacyPolicy: 'Política de Privacidade',
+    termsOfUse: 'Termos de Uso',
+    contactUs: 'Contate-nos'
   },
   ru: {
     tutorialTitle: "Запишите свои \"Мысли\"",
@@ -477,7 +504,10 @@ const translations = {
       localTotalTime: "Эти мысли тихо наслаиваются где-то в {country}.\nИтого: {hours}ч",
       globalPeopleCount: "Эти мысли тихо распространяются по миру.\n{count} человек думают об этом.",
       localPeopleCount: "Эти мысли тихо распространяются по {country}.\n{count} человек думают об этом."
-    }
+    },
+    privacyPolicy: 'Политика конфиденциальности',
+    termsOfUse: 'Условия использования',
+    contactUs: 'Связаться с нами'
   },
   hi: {
     tutorialTitle: "अपने \"विचार\" रिकॉर्ड करें",
@@ -525,7 +555,10 @@ const translations = {
       localTotalTime: "ये विचार {country} में कहीं चुपचाप जुड़ रहे हैं।\nकुल: {hours} घंटे",
       globalPeopleCount: "ये विचार चुपचाप दुनिया भर में फैल रहे हैं।\n{count} लोग इसके बारे में सोच रहे हैं。",
       localPeopleCount: "ये विचार चुपचाप {country} में फैल रहे हैं।\n{count} लोग इसके बारे में सोच रहे हैं。"
-    }
+    },
+    privacyPolicy: 'गोपनीयता नीति',
+    termsOfUse: 'उपयोग की शर्तें',
+    contactUs: 'हमसे संपर्क करें'
   },
   ar: {
     tutorialTitle: "سجل \"أفكارك\"",
@@ -573,7 +606,10 @@ const translations = {
       localTotalTime: "هذه الأفكار تتراكم بهدوء في مكان ما في {country}.\nالإجمالي: {hours} ساعة",
       globalPeopleCount: "هذه الأفكار تنتشر بهدوء حول العالم.\n{count} شخص يفكرون في هذا.",
       localPeopleCount: "هذه الأفكار تنتشر بهدوء في {country}.{count} شخص يفكرون في هذا."
-    }
+    },
+    privacyPolicy: 'سياسة الخصوصية',
+    termsOfUse: 'شروط الاستخدام',
+    contactUs: 'اتصل بنا'
   }
 };
 
