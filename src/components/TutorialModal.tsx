@@ -95,6 +95,11 @@ export default function TutorialModal({ onClose }: Props) {
           width: 100%;
           overflow-y: auto;
           display: block;
+          scrollbar-width: none; /* Hide for Firefox */
+          -ms-overflow-style: none; /* Hide for IE/Edge */
+        }
+        .tutorial-image-container::-webkit-scrollbar {
+          display: none; /* Hide for Chrome/Safari */
         }
 
         .tutorial-image {
