@@ -1,5 +1,13 @@
 const translations = {
   ja: {
+    tutorialTitle: "あなたの「想い」を、記録する。",
+    tutorialSubtitle: "believeの使い方",
+    tutorialStep1Title: "想う相手を選ぶ",
+    tutorialStep1Desc: "まずは、あなたが心に想い浮かべる大切な人を登録します。",
+    tutorialStep2Title: "「想う」をタップ",
+    tutorialStep2Desc: "タップすると、静かで穏やかな時間が流れ始めます。",
+    tutorialStep3Title: "「ありがとう」で終える",
+    tutorialStep3Desc: "時間が終わると、あなたの想いが記録として保存されます。",
     photoUpload: '+ 写真',
     placeholderName: '誰を想いますか？ (名前)',
     startSetup: 'はじめる',
@@ -17,6 +25,9 @@ const translations = {
     resetTimeOption: 'これまでの想った時間をリセットする',
     howToUse: '使い方',
     close: '閉じる',
+    lpConceptTitle: 'believe - 想う時間 -',
+    lpConceptDescription: 'believe は、大切な誰かを「想う」ためのミニマルな儀式アプリです。\nユーザーが特定の人物に対して心を向ける時間を記録し、その想いが世界中でどのように共有されているかを可視化することで、精神的なつながりや癒やしを提供することを目的としています。',
+    lpStart: 'はじめる',
     messages: [
       "ちゃんと届いています", 
       "優しい想いに包まれて", 
@@ -37,6 +48,14 @@ const translations = {
     }
   },
   en: {
+    tutorialTitle: "Record your \"Thoughts\"",
+    tutorialSubtitle: "How to use believe",
+    tutorialStep1Title: "Choose someone",
+    tutorialStep1Desc: "Register someone special you want to keep in your thoughts.",
+    tutorialStep2Title: "Tap \"Think\"",
+    tutorialStep2Desc: "A quiet, peaceful time begins.",
+    tutorialStep3Title: "End with \"Thank you\"",
+    tutorialStep3Desc: "Your thoughts are recorded and saved.",
     photoUpload: '+ Photo',
     placeholderName: 'Who are you thinking of?',
     startSetup: 'Begin',
@@ -54,6 +73,9 @@ const translations = {
     resetTimeOption: 'Reset accumulated time',
     howToUse: 'How to use',
     close: 'Close',
+    lpConceptTitle: 'believe - time to remember -',
+    lpConceptDescription: 'believe is a minimalist ritual app for "thinking" about someone important.\nBy recording the moments users focus their hearts on a specific person and visualizing how those thoughts are shared globally, it aims to provide spiritual connection and healing.',
+    lpStart: 'Start',
     messages: [
       "Your thoughts are felt.", 
       "Wrapped in gentle thoughts.", 
@@ -74,6 +96,14 @@ const translations = {
     }
   },
   es: {
+    tutorialTitle: "Registra tus \"Pensamientos\"",
+    tutorialSubtitle: "Cómo usar believe",
+    tutorialStep1Title: "Elige a alguien",
+    tutorialStep1Desc: "Registra a alguien especial en quien quieras pensar.",
+    tutorialStep2Title: "Toca \"Pensar\"",
+    tutorialStep2Desc: "Comienza un tiempo tranquilo y pacífico.",
+    tutorialStep3Title: "Termina con \"Gracias\"",
+    tutorialStep3Desc: "Tus pensamientos quedan registrados.",
     photoUpload: '+ Foto',
     placeholderName: '¿En quién estás pensando?',
     startSetup: 'Comenzar',
@@ -91,6 +121,9 @@ const translations = {
     resetTimeOption: 'Restablecer tiempo acumulado',
     howToUse: 'Cómo usar',
     close: 'Cerrar',
+    lpConceptTitle: 'believe - tiempo para recordar -',
+    lpConceptDescription: 'believe es una aplicación ritual minimalista para "pensar" en alguien importante.\nAl registrar los momentos en que los usuarios enfocan sus corazones en una persona específica y visualizar cómo esos pensamientos se comparten globalmente, su objetivo es brindar conexión espiritual y sanación.',
+    lpStart: 'Empezar',
     messages: [
       "Tus pensamientos han llegado.", 
       "Envuelto en pensamientos gentiles.", 
@@ -111,6 +144,14 @@ const translations = {
     }
   },
   fr: {
+    tutorialTitle: "Enregistrez vos \"Pensées\"",
+    tutorialSubtitle: "Comment utiliser believe",
+    tutorialStep1Title: "Choisissez quelqu'un",
+    tutorialStep1Desc: "Enregistrez une personne spéciale à qui vous pensez.",
+    tutorialStep2Title: "Appuyez sur \"Penser\"",
+    tutorialStep2Desc: "Un moment calme et paisible commence.",
+    tutorialStep3Title: "Terminez par \"Merci\"",
+    tutorialStep3Desc: "Vos pensées sont enregistrées.",
     photoUpload: '+ Photo',
     placeholderName: 'À qui pensez-vous ?',
     startSetup: 'Commencer',
@@ -128,6 +169,9 @@ const translations = {
     resetTimeOption: 'Réinitialiser le temps cumulé',
     howToUse: 'Comment utiliser',
     close: 'Fermer',
+    lpConceptTitle: 'believe - temps pour se souvenir -',
+    lpConceptDescription: 'believe est une application rituelle minimaliste pour "penser" à quelqu\'un d\'important.\nEn enregistrant les moments où les utilisateurs concentrent leur cœur sur une personne spécifique et en visualisant comment ces pensées sont partagées à l\'échelle mondiale, elle vise à fournir une connexion spirituelle et une guérison.',
+    lpStart: 'Commencer',
     messages: [
       "Vos pensées sont ressenties.", 
       "Enveloppé de douces pensées.", 
@@ -148,6 +192,14 @@ const translations = {
     }
   },
   de: {
+    tutorialTitle: "Zeichne deine \"Gedanken\" auf",
+    tutorialSubtitle: "So nutzt du believe",
+    tutorialStep1Title: "Wähle jemanden",
+    tutorialStep1Desc: "Registriere eine besondere Person, an die du denken möchtest.",
+    tutorialStep2Title: "Tippe auf \"Denken\"",
+    tutorialStep2Desc: "Eine ruhige, friedliche Zeit beginnt.",
+    tutorialStep3Title: "Beende mit \"Danke\"",
+    tutorialStep3Desc: "Deine Gedanken werden aufgezeichnet.",
     photoUpload: '+ Foto',
     placeholderName: 'An wen denkst du?',
     startSetup: 'Beginnen',
@@ -165,6 +217,9 @@ const translations = {
     resetTimeOption: 'Akkumulierte Zeit zurücksetzen',
     howToUse: 'Wie benutzt man',
     close: 'Schließen',
+    lpConceptTitle: 'believe - zeit des gedenkens -',
+    lpConceptDescription: 'believe ist eine minimalistische Ritual-App, um an jemanden zu "denken", der einem wichtig ist.\nIndem sie die Momente aufzeichnet, in denen Nutzer ihr Herz auf eine bestimmte Person konzentrieren, und visualisiert, wie diese Gedanken weltweit geteilt werden, zielt sie darauf ab, spirituelle Verbindung und Heilung zu bieten.',
+    lpStart: 'Starten',
     messages: [
       "Deine Gedanken kommen an.", 
       "In sanfte Gedanken gehüllt.", 
@@ -185,6 +240,14 @@ const translations = {
     }
   },
   zh: {
+    tutorialTitle: "记录你的“思念”",
+    tutorialSubtitle: "believe 使用方法",
+    tutorialStep1Title: "选择思念对象",
+    tutorialStep1Desc: "注册你想在心中思念的特别之人。",
+    tutorialStep2Title: "点击“思念”",
+    tutorialStep2Desc: "一段宁静祥和的时光即将开始。",
+    tutorialStep3Title: "以“谢谢”结束",
+    tutorialStep3Desc: "您的思念将被记录下来。",
     photoUpload: '+ 照片',
     placeholderName: '您在想念谁？',
     startSetup: '开始',
@@ -202,6 +265,9 @@ const translations = {
     resetTimeOption: '重置累计时间',
     howToUse: '如何使用',
     close: '关闭',
+    lpConceptTitle: 'believe - 思念的时光 -',
+    lpConceptDescription: 'believe 是一款旨在“思念”重要他人的极简仪式应用。\n通过记录用户全心关注特定人物的时刻，并可视化这些思念在全宇宙如何被共享，旨在提供心灵的连接与慰藉。',
+    lpStart: '开始',
     messages: [
       "您的思念已传达。", 
       "被温柔的思绪包围。", 
@@ -222,6 +288,14 @@ const translations = {
     }
   },
   ko: {
+    tutorialTitle: "당신의 '마음'을 기록하다",
+    tutorialSubtitle: "believe 사용법",
+    tutorialStep1Title: "생각할 사람 선택",
+    tutorialStep1Desc: "마음에 담아둘 소중한 사람을 등록합니다.",
+    tutorialStep2Title: "'그리다' 탭하기",
+    tutorialStep2Desc: "조용하고 평화로운 시간이 시작됩니다.",
+    tutorialStep3Title: "'감사합니다'로 끝내기",
+    tutorialStep3Desc: "당신의 마음이 기록으로 저장됩니다.",
     photoUpload: '+ 사진',
     placeholderName: '누구를 생각하나요?',
     startSetup: '시작하기',
@@ -239,6 +313,9 @@ const translations = {
     resetTimeOption: '누적 시간 초기화',
     howToUse: '사용 방법',
     close: '닫기',
+    lpConceptTitle: 'believe - 마음을 그리는 시간 -',
+    lpConceptDescription: 'believe는 소중한 누군가를 "생각"하기 위한 미니멀한 의식 앱입니다.\n사용자가 특정 인물에게 마음을 향하는 시간을 기록하고, 그 마음이 전 세계에서 어떻게 공유되는지 시각화함으로써 정신적인 연결과 치유를 제공하는 것을 목적으로 합니다.',
+    lpStart: '시작하기',
     messages: [
       "마음이 잘 전해졌습니다.", 
       "다정한 생각에 감싸여.", 
@@ -259,6 +336,14 @@ const translations = {
     }
   },
   it: {
+    tutorialTitle: "Registra i tuoi \"Pensieri\"",
+    tutorialSubtitle: "Come usare believe",
+    tutorialStep1Title: "Scegli qualcuno",
+    tutorialStep1Desc: "Registra una persona speciale a cui pensare.",
+    tutorialStep2Title: "Tocca \"Pensare\"",
+    tutorialStep2Desc: "Inizia un momento di pace.",
+    tutorialStep3Title: "Termina con \"Grazie\"",
+    tutorialStep3Desc: "I tuoi pensieri vengono registrati.",
     photoUpload: '+ Foto',
     placeholderName: 'A chi stai pensando?',
     startSetup: 'Inizia',
@@ -276,6 +361,9 @@ const translations = {
     resetTimeOption: 'Reimposta tempo accumulato',
     howToUse: 'Come usare',
     close: 'Chiudi',
+    lpConceptTitle: 'believe - tempo per ricordare -',
+    lpConceptDescription: 'believe è un\'applicazione rituale minimalista per "pensare" a qualcuno di importante.\nRegistrando i momenti in cui gli utenti concentrano il proprio cuore su una persona specifica e visualizzando come tali pensieri sono condivisi a livello globale, mira a fornire connessione spirituale e guarigione.',
+    lpStart: 'Inizia',
     messages: [
       "I tuoi pensieri sono sentiti.", 
       "Avvolto in pensieri gentili.", 
@@ -296,6 +384,14 @@ const translations = {
     }
   },
   pt: {
+    tutorialTitle: "Grave seus \"Pensamentos\"",
+    tutorialSubtitle: "Como usar believe",
+    tutorialStep1Title: "Escolha alguém",
+    tutorialStep1Desc: "Registre alguém especial em quem você deseja pensar.",
+    tutorialStep2Title: "Toque em \"Pensar\"",
+    tutorialStep2Desc: "Um momento de paz começa.",
+    tutorialStep3Title: "Termine com \"Obrigado\"",
+    tutorialStep3Desc: "Seus pensamentos são registrados.",
     photoUpload: '+ Foto',
     placeholderName: 'Em quem você está pensando?',
     startSetup: 'Começar',
@@ -313,6 +409,9 @@ const translations = {
     resetTimeOption: 'Redefinir tempo acumulado',
     howToUse: 'Como usar',
     close: 'Fechar',
+    lpConceptTitle: 'believe - tempo de lembrar -',
+    lpConceptDescription: 'believe é um aplicativo de ritual minimalista para "pensar" em alguém importante.\nAo registrar os momentos em que os usuários concentram seus corações em uma pessoa específica e visualizar como esses pensamentos são compartilhados globalmente, visa proporcionar conexão espiritual e cura.',
+    lpStart: 'Começar',
     messages: [
       "Seus pensamentos chegaram.", 
       "Envolto em pensamentos gentis.", 
@@ -333,6 +432,14 @@ const translations = {
     }
   },
   ru: {
+    tutorialTitle: "Запишите свои \"Мысли\"",
+    tutorialSubtitle: "Как использовать believe",
+    tutorialStep1Title: "Выберите кого-нибудь",
+    tutorialStep1Desc: "Зарегистрируйте особенного человека.",
+    tutorialStep2Title: "Нажмите \"Думать\"",
+    tutorialStep2Desc: "Начинается тихое, мирное время.",
+    tutorialStep3Title: "Завершите словом \"Спасибо\"",
+    tutorialStep3Desc: "Ваши мысли записаны.",
     photoUpload: '+ Фото',
     placeholderName: 'О ком вы думаете?',
     startSetup: 'Начать',
@@ -350,6 +457,9 @@ const translations = {
     resetTimeOption: 'Сбросить накопленное время',
     howToUse: 'Как пользоваться',
     close: 'Закрыть',
+    lpConceptTitle: 'believe - время для мыслей -',
+    lpConceptDescription: 'believe — это минималистичное ритуальное приложение для тех, кто хочет «думать» о ком-то важном.\nЗаписывая моменты, когда пользователи направляют свои сердца на конкретного человека, и визуализируя, как эти мысли разделяются по всему миру, оно стремится обеспечить духовную связь и исцеление.',
+    lpStart: 'Начать',
     messages: [
       "Ваши мысли услышаны.", 
       "Окутан мягкими мыслями.", 
@@ -370,6 +480,14 @@ const translations = {
     }
   },
   hi: {
+    tutorialTitle: "अपने \"विचार\" रिकॉर्ड करें",
+    tutorialSubtitle: "believe का उपयोग कैसे करें",
+    tutorialStep1Title: "किसी को चुनें",
+    tutorialStep1Desc: "किसी विशेष व्यक्ति को पंजीकृत करें।",
+    tutorialStep2Title: "\"याद करें\" टैप करें",
+    tutorialStep2Desc: "एक शांत समय शुरू होता है।",
+    tutorialStep3Title: "\"धन्यवाद\" के साथ समाप्त करें",
+    tutorialStep3Desc: "आपके विचार सहेजे जाते हैं।",
     photoUpload: '+ फ़ोटो',
     placeholderName: 'आप किसे याद कर रहे हैं?',
     startSetup: 'शुरू करें',
@@ -387,6 +505,9 @@ const translations = {
     resetTimeOption: 'कुल समय रीセット करें',
     howToUse: 'कैसे उपयोग करें',
     close: 'बंद करें',
+    lpConceptTitle: 'believe - याद करने का समय -',
+    lpConceptDescription: 'believe किसी महत्वपूर्ण व्यक्ति के बारे में "सोचने" के लिए एक न्यूनतम अनुष्ठान ऐप है।\nउन क्षणों को रिकॉर्ड करके जब उपयोगकर्ता किसी विशिष्ट व्यक्ति पर अपना दिल केंद्रित करते हैं और यह कल्पना करके कि वे विचार विश्व स्तर पर कैसे साझा किए जाते हैं, इसका उद्देश्य आध्यात्मिक संबंध और उपचार प्रदान करना है。',
+    lpStart: 'शुरू करें',
     messages: [
       "आपकी भावनाएँ पहुँच गई हैं।", 
       "सौम्य विचारों में लिपटा हुआ।", 
@@ -407,6 +528,14 @@ const translations = {
     }
   },
   ar: {
+    tutorialTitle: "سجل \"أفكارك\"",
+    tutorialSubtitle: "كيفية استخدام believe",
+    tutorialStep1Title: "اختر شخصا ما",
+    tutorialStep1Desc: "سجل شخصا مميزا.",
+    tutorialStep2Title: "انقر على \"تفكير\"",
+    tutorialStep2Desc: "يبدأ وقت هادئ ومسالم.",
+    tutorialStep3Title: "اختتم بـ \"شكراً\"",
+    tutorialStep3Desc: "تم تسجيل أفكارك.",
     photoUpload: '+ صورة',
     placeholderName: 'بمن تفكر؟',
     startSetup: 'ابدأ',
@@ -424,6 +553,9 @@ const translations = {
     resetTimeOption: 'إعادة ضبط الوقت المتراكم',
     howToUse: 'كيف تستخدم',
     close: 'إغلاق',
+    lpConceptTitle: 'believe - وقت للتفكير -',
+    lpConceptDescription: 'believe هو تطبيق طقسي بسيط لـ "التفكير" في شخص مهم.\nمن خلال تسجيل اللحظات التي يركز فيها المستخدمون قلوبهم على شخص معين وتصور كيفية مشاركة تلك الأفكار عالميًا، فإنه يهدف إلى توفير التواصل الروحي والشفاء.',
+    lpStart: 'ابدأ',
     messages: [
       "أفكارك قد وصلت.", 
       "مغلف بأفكار لطيفة.", 

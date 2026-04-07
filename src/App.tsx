@@ -5,10 +5,11 @@ import ThinkingView from './components/ThinkingView';
 import EndView from './components/EndView';
 import { Analytics } from './services/analytics';
 import { Target, Session, EndStats } from './types';
-type ViewState = 'setup' | 'home' | 'thinking' | 'end';
+import LandingView from './components/LandingView';
+type ViewState = 'landing' | 'setup' | 'home' | 'thinking' | 'end';
 
 function App() {
-  const [view, setView] = useState<ViewState>('setup');
+  const [view, setView] = useState<ViewState>('landing');
   const [target, setTarget] = useState<Target | null>(null);
   const [sessions, setSessions] = useState<Session[]>([]);
   const [currentDuration, setCurrentDuration] = useState(0);
@@ -38,6 +39,7 @@ function App() {
   };
 
   const handleBackgroundClick = (e: React.MouseEvent) => {
+    if (view === 'landing') return; // トップページではトーン切り替え不可
     const el = e.target as HTMLElement;
     if (
       el.closest('button') || 
@@ -51,6 +53,14 @@ function App() {
     }
     toggleTheme();
   };
+
+  useEffect(() => {
+    if (view === 'landing') {
+      document.body.classList.remove('light-theme');
+    } else if (isLight) {
+      document.body.classList.add('light-theme');
+    }
+  }, [view, isLight]);
 
   useEffect(() => {
     // Load from local storage
@@ -123,8 +133,18 @@ function App() {
     setView('home');
   };
 
+  const handleStartFromLanding = () => {
+    const savedTarget = localStorage.getItem('believe_target');
+    if (savedTarget) {
+      setView('home');
+    } else {
+      setView('setup');
+    }
+  };
+
   return (
     <div className="global-bg-wrapper" onClick={handleBackgroundClick}>
+      {view === 'landing' && <LandingView onStart={handleStartFromLanding} />}
       {view === 'setup' && <SetupView initialTarget={target || undefined} onSave={handleSaveTarget} />}
       {view === 'home' && target && <HomeView target={target} sessions={sessions} onStart={handleStartThinking} onEditTarget={handleEditTarget} />}
       {view === 'thinking' && target && <ThinkingView target={target} onEnd={handleEndThinking} />}
