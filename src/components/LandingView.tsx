@@ -39,14 +39,14 @@ export default function LandingView({ onStart }: Props) {
 
         {/* Action area */}
         <div className="fixed-action-container" style={{ gridRow: 'auto', marginTop: '20px' }}>
-          <button className="unified-action-button" onClick={onStart}>
+          <button className="unified-action-button" onClick={(e) => { e.stopPropagation(); onStart(); }}>
             {t.lpStart}
           </button>
           
           <button 
             className="unified-action-button" 
             style={{ marginTop: 'clamp(25px, 6dvh, 50px)' }}
-            onClick={() => setShowTutorial(true)}
+            onClick={(e) => { e.stopPropagation(); setShowTutorial(true); }}
           >
             {t.howToUse}
           </button>
