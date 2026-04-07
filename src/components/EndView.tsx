@@ -6,9 +6,10 @@ interface Props {
   duration: number;
   stats?: EndStats | null;
   onAcknowledge: () => void;
+  onLogoClick?: () => void;
 }
 
-export default function EndView({ duration, stats, onAcknowledge }: Props) {
+export default function EndView({ duration, stats, onAcknowledge, onLogoClick }: Props) {
   const t = useI18n();
   
   // Determine Country Name for display
@@ -84,7 +85,7 @@ export default function EndView({ duration, stats, onAcknowledge }: Props) {
 
   return (
     <div className="app-container">
-      <div className="logo-container">
+      <div className="logo-container" onClick={onLogoClick} style={{ cursor: onLogoClick ? 'pointer' : 'default' }}>
         <h1 className="logo">believe</h1>
       </div>
       

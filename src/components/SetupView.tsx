@@ -5,9 +5,10 @@ import { useI18n } from '../i18n';
 interface Props {
   initialTarget?: Target;
   onSave: (target: Target, resetTime: boolean) => void;
+  onLogoClick?: () => void;
 }
 
-export default function SetupView({ initialTarget, onSave }: Props) {
+export default function SetupView({ initialTarget, onSave, onLogoClick }: Props) {
   const [name, setName] = useState(initialTarget?.name || '');
   const [photoUrl, setPhotoUrl] = useState<string | null>(initialTarget?.photoUrl || null);
   const [resetTime, setResetTime] = useState(false);
@@ -33,7 +34,7 @@ export default function SetupView({ initialTarget, onSave }: Props) {
 
   return (
     <div className="app-container">
-      <div className="logo-container">
+      <div className="logo-container" onClick={onLogoClick} style={{ cursor: onLogoClick ? 'pointer' : 'default' }}>
         <h1 className="logo">believe</h1>
       </div>
       

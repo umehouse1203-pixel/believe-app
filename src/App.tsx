@@ -133,6 +133,10 @@ function App() {
     setView('home');
   };
 
+  const handleGoToLanding = () => {
+    setView('landing');
+  };
+
   const handleStartFromLanding = () => {
     const savedTarget = localStorage.getItem('believe_target');
     if (savedTarget) {
@@ -145,10 +149,10 @@ function App() {
   return (
     <div className="global-bg-wrapper" onClick={handleBackgroundClick}>
       {view === 'landing' && <LandingView onStart={handleStartFromLanding} />}
-      {view === 'setup' && <SetupView initialTarget={target || undefined} onSave={handleSaveTarget} />}
-      {view === 'home' && target && <HomeView target={target} sessions={sessions} onStart={handleStartThinking} onEditTarget={handleEditTarget} />}
+      {view === 'setup' && <SetupView initialTarget={target || undefined} onSave={handleSaveTarget} onLogoClick={handleGoToLanding} />}
+      {view === 'home' && target && <HomeView target={target} sessions={sessions} onStart={handleStartThinking} onEditTarget={handleEditTarget} onLogoClick={handleGoToLanding} />}
       {view === 'thinking' && target && <ThinkingView target={target} onEnd={handleEndThinking} />}
-      {view === 'end' && <EndView duration={currentDuration} stats={stats} onAcknowledge={handleAcknowledgeEnd} />}
+      {view === 'end' && <EndView duration={currentDuration} stats={stats} onAcknowledge={handleAcknowledgeEnd} onLogoClick={handleGoToLanding} />}
     </div>
   );
 }

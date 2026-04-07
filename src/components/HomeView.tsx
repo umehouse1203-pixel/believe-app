@@ -6,9 +6,10 @@ interface Props {
   sessions: Session[];
   onStart: () => void;
   onEditTarget: () => void;
+  onLogoClick?: () => void;
 }
 
-export default function HomeView({ target, sessions, onStart, onEditTarget }: Props) {
+export default function HomeView({ target, sessions, onStart, onEditTarget, onLogoClick }: Props) {
   const t = useI18n();
   const totalSeconds = sessions
     .filter(s => s.targetName === target.name)
@@ -30,7 +31,7 @@ export default function HomeView({ target, sessions, onStart, onEditTarget }: Pr
 
   return (
     <div className="app-container">
-      <div className="logo-container">
+      <div className="logo-container" onClick={onLogoClick} style={{ cursor: onLogoClick ? 'pointer' : 'default' }}>
         <h1 className="logo">believe</h1>
       </div>
       
