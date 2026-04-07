@@ -101,6 +101,8 @@ export default function TutorialModal({ onClose }: Props) {
           width: 100%;
           height: auto;
           display: block;
+          margin-top: -2px; /* Shift up to cover top sliver */
+          transform: scale(1.01); /* Slightly over-scale to guarantee coverage */
         }
 
         /* Light theme adaptations */
