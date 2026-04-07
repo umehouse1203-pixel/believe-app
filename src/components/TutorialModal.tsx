@@ -53,9 +53,7 @@ export default function TutorialModal({ onClose }: Props) {
         }
         
         .modal-content.tutorial-modal {
-          background: rgba(25, 25, 25, 0.75);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
+          background: #000;
           width: 90%;
           max-width: 380px;
           height: auto;
@@ -107,9 +105,9 @@ export default function TutorialModal({ onClose }: Props) {
 
         /* Light theme adaptations */
         .light-theme .modal-content.tutorial-modal {
-          background: rgba(253, 250, 246, 0.85);
-          border-color: rgba(0, 0, 0, 0.06);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+          background: #000;
+          border-color: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
         .light-theme .modal-close-btn {
           color: var(--text-color);
