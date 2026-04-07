@@ -20,7 +20,7 @@ export default function LandingView({ onStart }: Props) {
         style={{ backgroundImage: 'url("/tutorials/background.png")' }}
       ></div>
       
-      <div className="landing-content-layer">
+      <div className="landing-content-layer" onClick={(e) => e.stopPropagation()}>
         
         {/* Logo area positioned identically to other views */}
         <div className="logo-container" style={{ position: 'absolute', top: 0, left: 0 }}>
@@ -58,9 +58,9 @@ export default function LandingView({ onStart }: Props) {
         {/* Footer */}
         <footer className="landing-footer">
           <div className="footer-links">
-            <a href="#" onClick={(e) => { e.preventDefault(); setLegalType('terms'); }}>{t.termsOfUse}</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setLegalType('privacy'); }}>{t.privacyPolicy}</a>
-            <a href="mailto:umedinosaur@gmail.com">{t.contactUs}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLegalType('terms'); }}>{t.termsOfUse}</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); e.stopPropagation(); setLegalType('privacy'); }}>{t.privacyPolicy}</a>
+            <a href="mailto:umedinosaur@gmail.com" onClick={(e) => e.stopPropagation()}>{t.contactUs}</a>
           </div>
         </footer>
       </div>
