@@ -47,9 +47,7 @@ export default function TutorialModal({ onClose }: Props) {
           -webkit-backdrop-filter: blur(8px);
           display: flex;
           justify-content: center;
-          align-items: flex-start; /* Allows scrolling from top if tall */
-          overflow-y: auto;
-          padding: 60px 0;
+          align-items: center;
           z-index: 10001;
           animation: fadeIn 0.4s ease-out;
         }
@@ -60,16 +58,17 @@ export default function TutorialModal({ onClose }: Props) {
           -webkit-backdrop-filter: blur(20px);
           width: 90%;
           max-width: 380px;
-          height: auto; /* Naturally grow to fit image */
+          height: auto;
+          max-height: 85vh;
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.08);
           position: relative;
-          overflow: hidden; /* Ensures image respects border-radius */
+          overflow: hidden;
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
           display: flex;
           flex-direction: column;
-          padding: 0; /* Completely remove padding to touch edges */
-          margin: auto; /* Vertically centers if smaller than viewport */
+          padding: 0;
+          margin: auto;
         }
 
         .modal-close-btn {
@@ -96,6 +95,7 @@ export default function TutorialModal({ onClose }: Props) {
 
         .tutorial-image-container {
           width: 100%;
+          overflow-y: auto;
           display: block;
         }
 
