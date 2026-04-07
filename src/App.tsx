@@ -26,6 +26,18 @@ function App() {
     }
   }, []);
 
+  // Preload Tutorial Image
+  useEffect(() => {
+    const lang = navigator.language.split('-')[0].toLowerCase();
+    const map: Record<string, string> = {
+      ja: '2', en: '3', es: '4', zh: '5', ko: '6',
+      fr: '7', de: '8', ar: '9', ru: '10', pt: '11',
+    };
+    const fileNum = map[lang] || '3';
+    const img = new Image();
+    img.src = `/tutorials/${fileNum}.svg`;
+  }, []);
+
   const toggleTheme = () => {
     if (isLight) {
       document.body.classList.remove('light-theme');

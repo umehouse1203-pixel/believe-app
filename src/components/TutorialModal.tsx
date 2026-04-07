@@ -59,10 +59,10 @@ export default function TutorialModal({ onClose }: Props) {
           height: auto;
           max-height: 85vh;
           border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border: none;
           position: relative;
           overflow: hidden;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
           display: flex;
           flex-direction: column;
           padding: 0;
